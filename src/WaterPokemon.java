@@ -1,11 +1,16 @@
-public class WaterPokemon {
-    public WaterPokemon(String name, Object level, int hp, Object food, Object sound) {
-    }
+import java.util.Arrays;
+import java.util.List;
 
-    public boolean getAttacks() {
+public class WaterPokemon extends Pokemon {
+
+    List<String> attacks = Arrays.asList("surf", "hydroPump", "hydroCanon", "rainDance");
+
+    public WaterPokemon(String name, int level, int hp, String food, String sound) {
+        super(name, level, hp, food, sound, "water");
     }
 
     public void surf(Pokemon pokemon, Pokemon gymPokemon) {
+        System.out.println(pokemon.getName() + " attacks " + gymPokemon.getName() + " with  surf");
     }
 
     public void hydroPump(Pokemon pokemon, Pokemon gymPokemon) {
@@ -16,4 +21,10 @@ public class WaterPokemon {
 
     public void rainDance(Pokemon pokemon, Pokemon gymPokemon) {
     }
+
+    @Override
+    public List<String> getAttacks() {
+        return attacks;
+    }
+
 }

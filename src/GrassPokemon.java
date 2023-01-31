@@ -1,11 +1,17 @@
-public class GrassPokemon {
-    public GrassPokemon(String name, Object level, int hp, Object food, Object sound) {
-    }
+import java.util.Arrays;
+import java.util.List;
 
-    public boolean getAttacks() {
+public class GrassPokemon extends Pokemon {
+
+   List<String> attacks = Arrays.asList("leafStorm", "solarBeam", "leechSeed", "leaveBlade");
+
+    public GrassPokemon(String name, int level, int hp, String food, String sound) {
+     super(name, level,hp, food, sound, "grass");
+
     }
 
     public void leafStorm(Pokemon pokemon, Pokemon gymPokemon) {
+     System.out.println(pokemon.getName() + " attacks " + gymPokemon.getName() + " with  leafStorm");
     }
 
     public void solarBeam(Pokemon pokemon, Pokemon gymPokemon) {
@@ -16,4 +22,10 @@ public class GrassPokemon {
 
     public void leaveBlade(Pokemon pokemon, Pokemon gymPokemon) {
     }
+
+ @Override
+ public List<String> getAttacks() {
+  return attacks;
+ }
+
 }
